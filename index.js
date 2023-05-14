@@ -1,6 +1,7 @@
 //Inputs Outputs
 const Nint = document.querySelector(".input");
 const out = document.querySelector(".result");
+const clear = document.querySelector(".clear")
 
 //Pa to U
 const btn =  document.querySelector(".mpatopa");
@@ -15,6 +16,24 @@ const btn6 = document.querySelector(".atmtobar")
 const btn7 = document.querySelector(".atmtommHg");
 const btn8 = document.querySelector(".atmtopsi");
 
+//Bar U
+const btn9 = document.querySelector(".bartopa");
+const btn10 = document.querySelector(".bartoatm")
+const btn11 = document.querySelector(".bartommHg");
+const btn12 = document.querySelector(".bartopsi");
+
+//Psi U
+const btn13 = document.querySelector(".psitopa");
+const btn14 = document.querySelector(".psitoatm")
+const btn15 = document.querySelector(".psitommHg");
+const btn16 = document.querySelector(".psitobar");
+
+//Clear
+clear.addEventListener("click", () => {
+    out.innerHTML = "0";
+})
+
+
 //btn Pa
 btn.addEventListener("click",mpatopa);
 btn1.addEventListener("click",patoatm);
@@ -27,6 +46,19 @@ btn5.addEventListener("click",atmtopa);
 btn6.addEventListener("click",atmtobar);
 btn7.addEventListener("click",atmtommHg);
 btn8.addEventListener("click",atmtopsi);
+
+//btn BAR
+btn9.addEventListener("click",bartopa);
+btn10.addEventListener("click",bartoatm);
+btn11.addEventListener("click",bartommHg);
+btn12.addEventListener("click",bartopsi);
+
+//btn PSI
+btn13.addEventListener("click",psitopa);
+btn14.addEventListener("click",psitoatm);
+btn15.addEventListener("click",psitommHg);
+btn16.addEventListener("click",psitobar);
+
 
 //functions PA 
 
@@ -70,4 +102,40 @@ function atmtommHg(){
 function atmtopsi(){
     let i = parseFloat(Nint.value) * 14.696;
 out.innerHTML = i + " Psi"
+}
+//functions BAR
+function bartopa(){
+    let j =parseFloat(Nint.value) * 100000;
+    out.innerHTML = j + " Pa";
+}
+function bartoatm(){
+    let k = parseFloat(Nint.value) / 1.013;
+    out.innerHTML = k + " Atm" ;
+}
+function bartommHg(){
+    let L = parseFloat(Nint.value) / 750.1;
+    out.innerHTML = L + " Atm" ;
+}
+function bartopsi(){
+    let M = parseFloat(Nint.value) * 14.504;
+    out.innerHTML = M + " Psi" ;
+}
+//functions PSI
+
+function psitopa(){
+let N = parseFloat(Nint.value) * 6895;
+out.innerHTML = N + " Pa";
+}
+function psitoatm(){
+let O = parseFloat(Nint.value) / 14.696;
+out.innerHTML = O + " Atm";
+}
+function psitommHg(){
+let p = parseFloat(Nint.value) * 51.7149;
+out.innerHTML = p + " mmHg";
+}
+
+function psitobar(){
+let q = parseFloat(Nint.value) / 14.504;
+out.innerHTML = q + " Bar";
 }
