@@ -30,7 +30,7 @@ const btn16 = document.querySelector(".psitobar");
 
 //Clear
 clear.addEventListener("click", () => {
-    out.innerHTML = "0";
+    out.innerHTML = " ";
 })
 
 
