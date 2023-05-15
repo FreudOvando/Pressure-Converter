@@ -31,6 +31,7 @@ const btn16 = document.querySelector(".psitobar");
 //Clear
 clear.addEventListener("click", () => {
     out.innerHTML = " ";
+    Nint.value = " ";
 })
 
 
